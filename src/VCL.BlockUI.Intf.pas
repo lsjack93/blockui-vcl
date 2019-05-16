@@ -1,4 +1,4 @@
-unit VCL.BlockUI.Intf;
+unit Vcl.BlockUI.Intf;
 
 interface
 
