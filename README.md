@@ -13,9 +13,9 @@ boss install github.com/viniciussanchez/blockui-vcl
 ```
 
 ### Getting Started
-You need to use Vcl.BlockUI.Intf and Vcl.BlockUI 
+You need to use VCL.BlockUI.Intf and VCL.BlockUI 
 ```
-uses Vcl.BlockUI.Intf, Vcl.BlockUI;
+uses VCL.BlockUI.Intf, VCL.BlockUI;
 ```
 
 #### How it works?
