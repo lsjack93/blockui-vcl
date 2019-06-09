@@ -4,12 +4,19 @@
 
 This package allows you to lock and unlock the user interface in a simple way.
 
-### Prerequisites
- * [**Boss**](https://github.com/HashLoad/boss) - Dependency Manager for Delphi
+## Prerequisites
+ * `[Optional]` For ease I recommend using the Boss for installation
+   * [**Boss**](https://github.com/HashLoad/boss) - Dependency Manager for Delphi
  
-### Installation 
+### Installation using Boss (dependency manager for Delphi applications)
 ```
 boss install github.com/viniciussanchez/blockui-vcl
+```
+
+### Manual Installation
+Add the following folders to your project, in *Project > Options > Resource Compiler > Directories and Conditionals > Include file search path*
+```
+../blockui-vcl/src
 ```
 
 ### Getting Started
