@@ -21,12 +21,12 @@ Add the following folders to your project, in *Project > Options > Resource Comp
 
 ### Getting Started
 You need to use VCL.BlockUI.Intf and VCL.BlockUI 
-```
+```pascal
 uses VCL.BlockUI.Intf, VCL.BlockUI;
 ```
 
 #### How it works?
-```
+```pascal
 var
   BlockUI: IBlockUI;
 begin
@@ -37,7 +37,7 @@ end;
 
 In the Create method you can tell which component you want to block:
 
-```
+```pascal
 BlockUI := TBlockUI.Create(Your component);
 ``` 
 
