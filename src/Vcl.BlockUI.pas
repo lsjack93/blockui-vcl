@@ -34,6 +34,7 @@ begin
   FLockedForm.AlphaBlend := True;
   FLockedForm.Color := clBlack;
   SetSizeLockedForm;
+  FLockedForm.Parent := FLockedComponent;
   FLockedForm.Show;
 end;
 
@@ -74,12 +75,7 @@ begin
     FLockedForm.Width := FLockedComponent.Width;
   end
   else
-  begin
-    FLockedForm.Left := FLockedComponent.ClientOrigin.X;
-    FLockedForm.Top := FLockedComponent.ClientOrigin.Y;
-    FLockedForm.Height := FLockedComponent.ClientHeight;
-    FLockedForm.Width := FLockedComponent.ClientWidth;
-  end;
+    FLockedForm.Align := alClient;
 end;
 
 end.
