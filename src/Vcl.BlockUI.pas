@@ -11,8 +11,6 @@ type
     FLockedComponent: TWinControl;
     procedure Block;
     procedure Unlock;
-  private
-    procedure SetSizeLockedForm;	
   public
     constructor Create; overload;
     constructor Create(const Component: TWinControl); overload;
@@ -27,13 +25,16 @@ procedure TBlockUI.Block;
 begin
   if Assigned(FLockedForm) or (not Assigned(FLockedComponent)) then
     Exit;
-  FLockedForm := TForm.Create(nil);
+  FLockedForm := TForm.Create(Application);
   FLockedForm.Position := poDesigned;
   FLockedForm.BorderStyle := bsNone;
   FLockedForm.AlphaBlendValue := 110;
   FLockedForm.AlphaBlend := True;
   FLockedForm.Color := clBlack;
-  SetSizeLockedForm;
+  FLockedForm.Left := FLockedComponent.Left;
+  FLockedForm.Top := FLockedComponent.Top;
+  FLockedForm.Height := FLockedComponent.Height;
+  FLockedForm.Width := FLockedComponent.Width;
   FLockedForm.Parent := FLockedComponent;
   FLockedForm.Show;
 end;
@@ -63,19 +64,6 @@ begin
   Self.Unlock;
   FLockedComponent := nil;
   inherited;
-end;
-
-procedure TBlockUI.SetSizeLockedForm;
-begin
-  if FLockedComponent = Application.MainForm then
-  begin
-    FLockedForm.Left := FLockedComponent.Left;
-    FLockedForm.Top := FLockedComponent.Top;
-    FLockedForm.Height := FLockedComponent.Height;
-    FLockedForm.Width := FLockedComponent.Width;
-  end
-  else
-    FLockedForm.Align := alClient;
 end;
 
 end.
