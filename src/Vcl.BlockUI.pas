@@ -35,7 +35,8 @@ begin
   FLockedForm.Top := FLockedComponent.Top;
   FLockedForm.Height := FLockedComponent.Height;
   FLockedForm.Width := FLockedComponent.Width;
-  FLockedForm.Parent := FLockedComponent;
+  if FLockedComponent <> Application.MainForm then
+    FLockedForm.Parent := FLockedComponent;    
   FLockedForm.Show;
 end;
 
